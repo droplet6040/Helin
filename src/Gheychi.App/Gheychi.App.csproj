@@ -9,7 +9,7 @@
         <Nullable>enable</Nullable>
         <LangVersion>latest</LangVersion>
 
-        <ApplicationTitle>Gheychi</ApplicationTitle>
+        <ApplicationTitle>Helin</ApplicationTitle>
         <ApplicationId>com.evergreen.gheychiapp</ApplicationId>
         <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
         <ApplicationVersion>1</ApplicationVersion>

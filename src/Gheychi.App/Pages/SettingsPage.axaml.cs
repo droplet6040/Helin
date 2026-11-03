@@ -297,7 +297,7 @@ public partial class SettingsPage : UserControl
         try
         {
             PulseHeart();
-            await Launcher.Default.OpenAsync(new Uri(AuthorProfileUrl));
+            await Task.CompletedTask; // Offline Helin: pulse heart only
         }
         catch (Exception ex)
         {

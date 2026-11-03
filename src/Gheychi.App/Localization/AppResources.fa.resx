@@ -739,7 +739,7 @@
     <value>ساخته‌شده با</value>
   </data>
   <data name="Settings_CreditBy" xml:space="preserve">
-    <value>توسط</value>
+    <value>برای</value>
   </data>
   <data name="Settings_Days" xml:space="preserve">
     <value>{0} روز</value>
@@ -961,7 +961,7 @@
     <value>زمانی که بیشتر هرزنامه‌ها می‌رسند</value>
   </data>
   <data name="Settings_RestartTitle" xml:space="preserve">
-    <value>قیچی دوباره اجرا شود؟</value>
+    <value>هلین دوباره اجرا شود؟</value>
   </data>
   <data name="Settings_RestartMessage" xml:space="preserve">
     <value>زبان جدید پس از اجرای دوباره برنامه اعمال می‌شود.</value>
@@ -976,10 +976,10 @@
     <value>پیام جدید</value>
   </data>
   <data name="Messages_NotDefaultTitle" xml:space="preserve">
-    <value>قیچی برنامه پیامک شما نیست</value>
+    <value>هلین برنامه پیامک شما نیست</value>
   </data>
   <data name="Messages_NotDefaultText" xml:space="preserve">
-    <value>اندروید فقط به برنامه پیش‌فرض پیامک اجازه دریافت و مدیریت پیام‌ها را می‌دهد. برای دیدن صندوق، قیچی را پیش‌فرض کنید.</value>
+    <value>اندروید فقط به برنامه پیش‌فرض پیامک اجازه دریافت و مدیریت پیام‌ها را می‌دهد. برای دیدن صندوق، هلین را پیش‌فرض کنید.</value>
   </data>
   <data name="Messages_NotDefaultAction" xml:space="preserve">
     <value>تنظیم به عنوان پیش‌فرض</value>
@@ -1420,7 +1420,7 @@
     <value>نماد برنامه</value>
   </data>
   <data name="Settings_IconGheychi" xml:space="preserve">
-    <value>قیچی</value>
+    <value>هلین</value>
   </data>
   <data name="Settings_IconStock" xml:space="preserve">
     <value>پیام‌ها</value>
@@ -1627,7 +1627,7 @@
     <value>بازگردانی شد</value>
   </data>
   <data name="Trash_RestoreFailed" xml:space="preserve">
-    <value>بازگردانی ممکن نشد. آیا قیچی برنامه پیامک پیش‌فرض است؟</value>
+    <value>بازگردانی ممکن نشد. آیا هلین برنامه پیامک پیش‌فرض است؟</value>
   </data>
   <data name="Emoji_Recent" xml:space="preserve">
     <value>اخیر</value>
@@ -1661,5 +1661,8 @@
   </data>
   <data name="Emoji_Backspace" xml:space="preserve">
     <value>حذف</value>
+  </data>
+  <data name="Settings_CreditRecipient" xml:space="preserve">
+    <value>&#x647;&#x644;&#x6cc;&#x20;&#x645;&#x646;</value>
   </data>
 </root>

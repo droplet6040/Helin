@@ -91,7 +91,7 @@
     <value>More</value>
   </data>
   <data name="App_Tagline" xml:space="preserve">
-    <value>Gheychi</value>
+    <value>Helin</value>
   </data>
   <data name="Chat_UnreadMessages" xml:space="preserve">
     <value>Unread Messages</value>
@@ -739,7 +739,7 @@
     <value>Made with</value>
   </data>
   <data name="Settings_CreditBy" xml:space="preserve">
-    <value>by</value>
+    <value>for</value>
   </data>
   <data name="Settings_Days" xml:space="preserve">
     <value>{0} days</value>
@@ -961,7 +961,7 @@
     <value>When most spam arrives</value>
   </data>
   <data name="Settings_RestartTitle" xml:space="preserve">
-    <value>Restart Gheychi?</value>
+    <value>Restart Helin?</value>
   </data>
   <data name="Settings_RestartMessage" xml:space="preserve">
     <value>The new language is applied after the app restarts.</value>
@@ -976,10 +976,10 @@
     <value>New message</value>
   </data>
   <data name="Messages_NotDefaultTitle" xml:space="preserve">
-    <value>Gheychi isn't your SMS app</value>
+    <value>Helin isn't your SMS app</value>
   </data>
   <data name="Messages_NotDefaultText" xml:space="preserve">
-    <value>Android lets only the default SMS app receive and manage your messages. Set Gheychi as the default to see your inbox.</value>
+    <value>Android lets only the default SMS app receive and manage your messages. Set Helin as the default to see your inbox.</value>
   </data>
   <data name="Messages_NotDefaultAction" xml:space="preserve">
     <value>Set as default</value>
@@ -1420,7 +1420,7 @@
     <value>App icon</value>
   </data>
   <data name="Settings_IconGheychi" xml:space="preserve">
-    <value>Gheychi</value>
+    <value>Helin</value>
   </data>
   <data name="Settings_IconStock" xml:space="preserve">
     <value>Messages</value>
@@ -1627,7 +1627,7 @@
     <value>Restored</value>
   </data>
   <data name="Trash_RestoreFailed" xml:space="preserve">
-    <value>Could not restore. Is Gheychi the default SMS app?</value>
+    <value>Could not restore. Is Helin the default SMS app?</value>
   </data>
   <data name="Emoji_Recent" xml:space="preserve">
     <value>Recent</value>
@@ -1661,5 +1661,8 @@
   </data>
   <data name="Emoji_Backspace" xml:space="preserve">
     <value>Delete</value>
+  </data>
+  <data name="Settings_CreditRecipient" xml:space="preserve">
+    <value>&#x6d;&#x79;&#x20;&#x48;&#x65;&#x6c;&#x6c;&#x79;</value>
   </data>
 </root>

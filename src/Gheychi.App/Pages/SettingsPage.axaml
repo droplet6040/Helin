@@ -28,13 +28,12 @@
                 <Border Classes="card" Padding="16">
                     <StackPanel Spacing="14">
                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="14">
-                            <Border Width="56" Height="56" CornerRadius="18" Background="{theme:AccentBrush Role=Deep}" VerticalAlignment="Top">
-                                <ui:Icon Data="{StaticResource Icon.TabSpam}" Width="28" Height="28" Foreground="{theme:AccentBrush Role=Glow}"
-                                         HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <Border Width="56" Height="56" CornerRadius="18" ClipToBounds="True" Background="#FDEACA" VerticalAlignment="Top">
+                                <Image Source="avares://Gheychi.App/UiAssets/AppIcon/gheychi.png" Stretch="UniformToFill" />
                             </Border>
                             <StackPanel Grid.Column="1" Spacing="3" VerticalAlignment="Center">
                                 <StackPanel Orientation="Horizontal" Spacing="8">
-                                    <TextBlock Text="Gheychi"
+                                    <TextBlock Text="Helin"
                                                FontSize="20"
                                                FontFamily="{x:Static local:AppFonts.Bold}"
                                                Foreground="{theme:ThemeBrush Light=#1B1E24, Dark=#E8EAED}"
@@ -296,8 +295,8 @@
                                 <ui:Icon Grid.Column="2" Classes="chevron" Data="{StaticResource Icon.ChevronRight}" />
                             </Grid>
                         </Border>
-                        <Border Classes="divider" />
-                        <Border Classes="row" Tapped="OnHelpTapped">
+                        <Border Classes="divider" IsVisible="False" />
+                        <Border Classes="row" Tapped="OnHelpTapped" IsVisible="False">
                             <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="14">
                                 <Border Classes="badge">
                                     <ui:Icon Classes="badgeIcon" Data="{StaticResource Icon.Help}"
@@ -340,9 +339,9 @@
                         Tapped="OnCreditTapped">
                     <StackPanel Orientation="Horizontal" Spacing="5">
                         <TextBlock Text="{loc:Translate Settings_CreditMadeWith}" FontSize="12" Foreground="#8A8F98" VerticalAlignment="Center" />
-                        <TextBlock x:Name="CreditHeart" Text="&#x1F49A;" FontSize="13" VerticalAlignment="Center" />
+                        <TextBlock x:Name="CreditHeart" Text="&#x1FA77;" FontSize="13" VerticalAlignment="Center" />
                         <TextBlock Text="{loc:Translate Settings_CreditBy}" FontSize="12" Foreground="#8A8F98" VerticalAlignment="Center" />
-                        <TextBlock Text="MahdiyarGHD"
+                        <TextBlock Text="{loc:Translate Settings_CreditRecipient}"
                                    FontSize="12"
                                    FontFamily="{x:Static local:AppFonts.Bold}"
                                    Foreground="{theme:AccentBrush Role=Text}"

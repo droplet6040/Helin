@@ -176,8 +176,8 @@
                                 </StackPanel>
                             </Grid>
                         </Border>
-                        <Border Classes="divider" />
-                        <Border Classes="row" Tapped="OnModelUpdateTapped">
+                        <Border Classes="divider" IsVisible="False" />
+                        <Border Classes="row" Tapped="OnModelUpdateTapped" IsVisible="False">
                             <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="14">
                                 <Border Classes="badge">
                                     <ui:Icon Classes="badgeIcon" Data="{StaticResource Icon.Download}"

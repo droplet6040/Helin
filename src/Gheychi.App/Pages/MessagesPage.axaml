@@ -16,7 +16,7 @@
                 <Panel Height="62">
                     <Grid IsVisible="{Binding IsNotSelectionMode}" Margin="22,10,10,12" ColumnDefinitions="*,Auto,Auto,Auto">
                         <TextBlock Grid.Column="0"
-                                   Text="Gheychi"
+                                   Text="Helin"
                                    ui:TextDirection.KeepSide="True"
                                    FontSize="22"
                                    FontFamily="{x:Static app:AppFonts.Bold}"
