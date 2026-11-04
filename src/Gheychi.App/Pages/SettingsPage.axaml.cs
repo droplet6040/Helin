@@ -27,7 +27,7 @@ public partial class SettingsPage : UserControl
     private const double ParallaxDip = 10;
     private static readonly TimeSpan SlideDuration = TimeSpan.FromMilliseconds(180);
     private static readonly TimeSpan BackDuration = TimeSpan.FromMilliseconds(140);
-    private const string AuthorProfileUrl = "https://github.com/MahdiyarGHD";
+    private const string AuthorProfileUrl = "";
 
     private readonly ISmsService? _sms;
     private readonly ISpamSettings? _spamSettings;

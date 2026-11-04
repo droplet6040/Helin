@@ -1292,10 +1292,10 @@
                             <TextBlock Grid.Column="1" Text="{loc:Translate Profile_SpamMessages}" FontSize="13" FontFamily="{x:Static app:AppFonts.Bold}" Foreground="{theme:ThemeBrush Light=#1B1E24, Dark=#E8EAED}" VerticalAlignment="Center" />
                         </Grid>
                     </Border>
-                    <Border Height="1" Margin="8,3" Background="{theme:ThemeBrush Light=#EEEFF0, Dark=#2A2E35}" />
+                    <Border IsVisible="False" Height="1" Margin="8,3" Background="{theme:ThemeBrush Light=#EEEFF0, Dark=#2A2E35}" />
                     <Border Padding="12,11"
                             Background="Transparent"
-                            Tapped="OnMenuHelpTapped">
+                            Tapped="OnMenuHelpTapped" IsVisible="False">
                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
                             <ui:Icon Grid.Column="0" Data="{StaticResource Icon.Help}" Width="18" Height="18" VerticalAlignment="Center" Foreground="{theme:ThemeBrush Light=#1B1E24, Dark=#E8EAED}" />
                             <TextBlock Grid.Column="1" Text="{loc:Translate Help_Feedback}" FontSize="13" FontFamily="{x:Static app:AppFonts.Bold}" Foreground="{theme:ThemeBrush Light=#1B1E24, Dark=#E8EAED}" VerticalAlignment="Center" />

@@ -927,7 +927,7 @@ public partial class ChatView : UserControl
         ContextActionMenu.HorizontalAlignment = side;
 
         CopyUrlActionRow.IsVisible = msg.HasUrl;
-        MenuReportRow.IsVisible = !msg.IsOutgoing;
+        MenuReportRow.IsVisible = false;
 
         // A message still in the send delay is not stored yet: only copying makes sense.
         var stored = !msg.IsHeld;
