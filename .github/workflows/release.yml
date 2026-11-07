@@ -180,9 +180,9 @@ jobs:
 
           # The in-app updater downloads these by name (GitHubAppReleaseSource.ApkUrl): the APK for the phone's ABI,
           # else the universal one.
-          collect "$bin/publish" "Gheychi-$version.apk" "$(for pair in $ANDROID_ABIS; do echo "${pair#*:}"; done | sort | xargs)"
+          collect "$bin/publish" "Helin-$version.apk" "$(for pair in $ANDROID_ABIS; do echo "${pair#*:}"; done | sort | xargs)"
           for pair in $ANDROID_ABIS; do
-            collect "$bin/${pair%%:*}/publish" "Gheychi-$version-${pair#*:}.apk" "${pair#*:}"
+            collect "$bin/${pair%%:*}/publish" "Helin-$version-${pair#*:}.apk" "${pair#*:}"
           done
 
           echo "dir=$out" >> "$GITHUB_OUTPUT"
@@ -190,7 +190,7 @@ jobs:
       - name: Upload build output
         uses: actions/upload-artifact@v4
         with:
-          name: Gheychi-${{ steps.tag.outputs.version }}
+          name: Helin-${{ steps.tag.outputs.version }}
           path: ${{ steps.apk.outputs.dir }}
 
       - name: Publish GitHub release
@@ -204,9 +204,9 @@ jobs:
           if gh release view "$TAG" >/dev/null 2>&1; then
             gh release upload "$TAG" "${files[@]}" --clobber
           else
+            # [Helin Custom] Minimal release notes without auto-generated commit changelog links
             notes="Bundled spam model v${{ steps.model.outputs.version }}"
-            notes+=$'\n\n'"Gheychi-${{ steps.tag.outputs.version }}.apk installs on any phone. The others are smaller, each for one processor type: arm64-v8a for most phones, armeabi-v7a for older 32-bit ones, x86_64 and x86 for emulators."
-            flags=(--verify-tag --generate-notes --title "$TAG" --notes "$notes")
+            flags=(--verify-tag --title "$TAG" --notes "$notes")
             if [[ "${{ steps.tag.outputs.prerelease }}" == "true" ]]; then
               flags+=(--prerelease)
             else
