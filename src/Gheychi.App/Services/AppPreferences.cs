@@ -120,7 +120,7 @@ public static class AppPreferences
     /// <summary>Look for app updates without being asked: when the app opens, and once a day.</summary>
     public static bool AutoUpdateCheck
     {
-        get => Preferences.Default.Get(AutoUpdateCheckKey, true);
+        get => Preferences.Default.Get(AutoUpdateCheckKey, false);
         set => Preferences.Default.Set(AutoUpdateCheckKey, value);
     }
 

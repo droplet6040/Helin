@@ -273,7 +273,7 @@ public partial class SpamScanView : UserControl
         if (row.Item is { } item)
         {
             var delete = loc["Spam_ActionDelete"];
-            var choice = await Dialogs.ActionSheetAsync(row.Sender, loc["Chat_Cancel"], delete, notSpam, reportSpam);
+            var choice = await Dialogs.ActionSheetAsync(row.Sender, loc["Chat_Cancel"], delete, notSpam); // [Helin Offline]
             if (choice == notSpam)
             {
                 if (_spam is null || !await _spam.RestoreAsync(item, trustSender: false))
@@ -298,15 +298,10 @@ public partial class SpamScanView : UserControl
         }
 
         if (row.Kept)
-        {
-            // Already judged not spam; all that is left is reporting it.
-            if (await Dialogs.ActionSheetAsync(row.Sender, loc["Chat_Cancel"], null, loc["Scan_ReportNotSpam"]) == loc["Scan_ReportNotSpam"])
-                await SpamReport.SubmitAsync(row.Body, isSpam: false);
-            return;
-        }
+            return; // [Helin Offline] Already marked not spam locally
 
         var trust = loc["Scan_TrustSender"];
-        var picked = await Dialogs.ActionSheetAsync(row.Sender, loc["Chat_Cancel"], null, notSpam, reportSpam, trust);
+        var picked = await Dialogs.ActionSheetAsync(row.Sender, loc["Chat_Cancel"], null, notSpam, trust); // [Helin Offline]
         if (picked == notSpam)
         {
             await _scan.MarkNotSpamAsync(row);
@@ -326,7 +321,7 @@ public partial class SpamScanView : UserControl
     private static Task<bool> AskReportAsync()
     {
         var loc = LocalizationManager.Instance;
-        return Dialogs.AlertAsync(loc["Scan_NotSpam"], loc["Scan_NotSpamAsk"], loc["Scan_Report"], loc["Scan_NoReport"]);
+        return Task.FromResult(false); // [Helin Offline] Never prompt to upload to Google Form
     }
 
     private async void OnHeaderActionTapped(object? sender, TappedEventArgs e)
@@ -457,7 +452,7 @@ public partial class SpamScanView : UserControl
             body.Children.Add(Sheet.Label(string.Format(loc["Scan_MoveBody"], day), 14.5, Sheet.Soft));
             if (threads > 0)
                 body.Children.Add(Sheet.Label(string.Format(loc["Scan_MoveThreads"], LocalizedNumbers.Number(threads)), 14.5, Sheet.Soft));
-            body.Children.Add(reportRow);
+            // body.Children.Add(reportRow); // [Helin Offline] Hide Google Form batch report checkbox
             body.Children.Add(buttons);
             return body;
         }, MoveChoice.Cancel, centered: true);

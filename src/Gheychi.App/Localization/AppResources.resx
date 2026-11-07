@@ -754,7 +754,7 @@
     <value>The download was damaged. Tap to try again</value>
   </data>
   <data name="AppUpdate_AllowInstall" xml:space="preserve">
-    <value>Allow Gheychi to install updates, then come back</value>
+    <value>Allow Helin to install updates, then come back</value>
   </data>
   <data name="AppUpdate_SignerMismatch" xml:space="preserve">
     <value>This version is signed differently and can't replace the installed app</value>
@@ -775,7 +775,7 @@
     <value>Made with</value>
   </data>
   <data name="Settings_CreditBy" xml:space="preserve">
-    <value>for</value>
+    <value>for &#x6d;&#x79;</value>
   </data>
   <data name="Settings_Days" xml:space="preserve">
     <value>{0} days</value>
@@ -1087,10 +1087,10 @@
     <value>App updates</value>
   </data>
   <data name="Notification_ChannelUpdatesDescription" xml:space="preserve">
-    <value>When a new version of Gheychi is out</value>
+    <value>When a new version of Helin is out</value>
   </data>
   <data name="Notification_UpdateTitle" xml:space="preserve">
-    <value>Gheychi {0} is available</value>
+    <value>Helin {0} is available</value>
   </data>
   <data name="Notification_UpdateText" xml:space="preserve">
     <value>Tap to update</value>
@@ -1858,7 +1858,7 @@
     <value>Moving messages to Spam…</value>
   </data>
   <data name="Scan_NeedDefaultApp" xml:space="preserve">
-    <value>Make Gheychi your default SMS app to move messages.</value>
+    <value>Make Helin your default SMS app to move messages.</value>
   </data>
   <data name="Scan_NothingMoved" xml:space="preserve">
     <value>No message was moved: they changed since the scan. Scan again to check them.</value>
@@ -1892,5 +1892,8 @@
   </data>
   <data name="Scan_RestoreAllBody" xml:space="preserve">
     <value>They go back to the inbox, and later scans leave them out.</value>
+  </data>
+  <data name="Settings_CreditRecipient" xml:space="preserve">
+    <value>&#x48;&#x65;&#x6c;&#x69;&#x61;</value>
   </data>
 </root>

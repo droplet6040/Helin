@@ -35,31 +35,7 @@ internal static class AppServices
         services.Singleton(() => new MlNetSpamClassifier(services.Get<SpamModelStore>()));
         services.Singleton<ISpamClassifier>(services.Get<MlNetSpamClassifier>);
         services.Singleton<ISpamModelUpdater>(services.Get<MlNetSpamClassifier>);
-        services.Singleton<ISpamModelSource>(() => new GitHubSpamModelSource(
-            new HttpClient { Timeout = TimeSpan.FromMinutes(2) },
-            FileSystem.CacheDirectory));
-#if SELF_UPDATE
-        // Left out of a Google Play build, which Play updates: everything about app updates asks for these and does
-        // nothing without them.
-        services.Singleton<IAppReleaseSource>(() => new GitHubAppReleaseSource(
-            new HttpClient { Timeout = TimeSpan.FromSeconds(30) },
-            GitHubAppReleaseSource.ChooseAbi(global::Android.OS.Build.SupportedAbis ?? [])));
-        services.Singleton<IAppUpdateState>(() => new Services.PreferencesAppUpdateState());
-        services.Singleton(() => new AppUpdates(
-            services.Get<IAppReleaseSource>(),
-            services.Get<IAppUpdateState>(),
-            AppInfo.Current.VersionString));
-        // The timeout covers the response headers only; a stalled body is stopped from the About screen.
-        services.Singleton(() => new ApkDownloader(
-            new HttpClient { Timeout = TimeSpan.FromSeconds(30) },
-            Path.Combine(FileSystem.CacheDirectory, "updates")));
-#endif
-        services.Singleton<ISpamReporter>(() => new GoogleFormSpamReporter(new HttpClient { Timeout = TimeSpan.FromSeconds(30) }));
-        services.Singleton<ISpamModelUpdateState>(() => new Services.PreferencesSpamModelUpdateState());
-        services.Singleton(() => new SpamModelUpdates(
-            services.Get<ISpamModelSource>(),
-            services.Get<ISpamModelUpdater>(),
-            services.Get<ISpamModelUpdateState>()));
+        // [Helin Offline] Network model/app updaters and GoogleFormSpamReporter unregistered.
         services.Singleton(() => new SpamDetector(
             services.Get<ISpamClassifier>(),
             services.Get<ISpamSettings>(),

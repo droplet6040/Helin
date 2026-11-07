@@ -22,7 +22,8 @@
 
         <!-- The in-app updater (GitHub releases, REQUEST_INSTALL_PACKAGES). Pass -p:GheychiSelfUpdate=false for a
              Google Play build: Play restricts that permission and updates the app itself. -->
-        <GheychiSelfUpdate Condition="'$(GheychiSelfUpdate)' == ''">true</GheychiSelfUpdate>
+        <!-- [Helin Offline] Disable self-updater & REQUEST_INSTALL_PACKAGES permission -->
+        <GheychiSelfUpdate Condition="'$(GheychiSelfUpdate)' == ''">false</GheychiSelfUpdate>
         <DefineConstants Condition="'$(GheychiSelfUpdate)' == 'true'">$(DefineConstants);SELF_UPDATE</DefineConstants>
     </PropertyGroup>
 

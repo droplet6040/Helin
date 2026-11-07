@@ -754,7 +754,7 @@
     <value>فایل دانلودشده خراب بود. دوباره بزنید</value>
   </data>
   <data name="AppUpdate_AllowInstall" xml:space="preserve">
-    <value>اجازه نصب به‌روزرسانی را به قیچی بدهید و برگردید</value>
+    <value>اجازه نصب به‌روزرسانی را به هلین بدهید و برگردید</value>
   </data>
   <data name="AppUpdate_SignerMismatch" xml:space="preserve">
     <value>این نسخه امضای دیگری دارد و نمی‌تواند جایگزین برنامه نصب‌شده شود</value>
@@ -1087,10 +1087,10 @@
     <value>به‌روزرسانی برنامه</value>
   </data>
   <data name="Notification_ChannelUpdatesDescription" xml:space="preserve">
-    <value>وقتی نسخه جدید قیچی منتشر می‌شود</value>
+    <value>وقتی نسخه جدید هلین منتشر می‌شود</value>
   </data>
   <data name="Notification_UpdateTitle" xml:space="preserve">
-    <value>قیچی {0} آماده است</value>
+    <value>هلین {0} آماده است</value>
   </data>
   <data name="Notification_UpdateText" xml:space="preserve">
     <value>برای به‌روزرسانی بزنید</value>
@@ -1858,7 +1858,7 @@
     <value>در حال انتقال پیام‌ها به هرزنامه…</value>
   </data>
   <data name="Scan_NeedDefaultApp" xml:space="preserve">
-    <value>برای جابه‌جایی پیام‌ها، قیچی را برنامه پیش‌فرض پیامک کنید.</value>
+    <value>برای جابه‌جایی پیام‌ها، هلین را برنامه پیش‌فرض پیامک کنید.</value>
   </data>
   <data name="Scan_NothingMoved" xml:space="preserve">
     <value>هیچ پیامی جابه‌جا نشد: پیام‌ها پس از بررسی تغییر کرده بودند. برای بررسی دوباره، اسکن را تکرار کنید.</value>
@@ -1892,5 +1892,8 @@
   </data>
   <data name="Scan_RestoreAllBody" xml:space="preserve">
     <value>این پیام‌ها به صندوق پیام برمی‌گردند و بررسی‌های بعدی آن‌ها را نادیده می‌گیرند.</value>
+  </data>
+  <data name="Settings_CreditRecipient" xml:space="preserve">
+    <value>&#x647;&#x644;&#x6cc;&#x627;&#x20;&#x645;&#x646;</value>
   </data>
 </root>

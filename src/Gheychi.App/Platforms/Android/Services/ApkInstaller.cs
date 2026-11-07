@@ -6,7 +6,7 @@ using Gheychi.App.Platforms.Android.Receivers;
 
 #if SELF_UPDATE
 // Only in builds that update themselves: Google Play restricts this permission, and Play updates its builds itself.
-[assembly: UsesPermission(global::Android.Manifest.Permission.RequestInstallPackages)]
+// [Helin Offline] [assembly: UsesPermission(global::Android.Manifest.Permission.RequestInstallPackages)]
 #endif
 
 namespace Gheychi.App.Platforms.Android.Services;
