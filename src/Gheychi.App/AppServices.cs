@@ -28,13 +28,38 @@ internal static class AppServices
         services.Singleton<ISpamMessageRepository>(() => new SpamMessageRepository(databasePath));
         services.Singleton<ITrashRepository>(() => new TrashRepository(databasePath));
         services.Singleton<ISpamStatsRepository>(() => new SpamStatRepository(databasePath));
+        services.Singleton<ISpamScanStore>(() => new SpamScanStore(databasePath));
         services.Singleton(() => new SpamModelStore(
             Path.Combine(FileSystem.AppDataDirectory, "spam-model"),
             name => FileSystem.OpenAppPackageFileAsync($"SpamModel/{name}")));
         services.Singleton(() => new MlNetSpamClassifier(services.Get<SpamModelStore>()));
         services.Singleton<ISpamClassifier>(services.Get<MlNetSpamClassifier>);
         services.Singleton<ISpamModelUpdater>(services.Get<MlNetSpamClassifier>);
-        // Offline Helin build: network update checks and spam reporting disabled.
+        services.Singleton<ISpamModelSource>(() => new GitHubSpamModelSource(
+            new HttpClient { Timeout = TimeSpan.FromMinutes(2) },
+            FileSystem.CacheDirectory));
+#if SELF_UPDATE
+        // Left out of a Google Play build, which Play updates: everything about app updates asks for these and does
+        // nothing without them.
+        services.Singleton<IAppReleaseSource>(() => new GitHubAppReleaseSource(
+            new HttpClient { Timeout = TimeSpan.FromSeconds(30) },
+            GitHubAppReleaseSource.ChooseAbi(global::Android.OS.Build.SupportedAbis ?? [])));
+        services.Singleton<IAppUpdateState>(() => new Services.PreferencesAppUpdateState());
+        services.Singleton(() => new AppUpdates(
+            services.Get<IAppReleaseSource>(),
+            services.Get<IAppUpdateState>(),
+            AppInfo.Current.VersionString));
+        // The timeout covers the response headers only; a stalled body is stopped from the About screen.
+        services.Singleton(() => new ApkDownloader(
+            new HttpClient { Timeout = TimeSpan.FromSeconds(30) },
+            Path.Combine(FileSystem.CacheDirectory, "updates")));
+#endif
+        services.Singleton<ISpamReporter>(() => new GoogleFormSpamReporter(new HttpClient { Timeout = TimeSpan.FromSeconds(30) }));
+        services.Singleton<ISpamModelUpdateState>(() => new Services.PreferencesSpamModelUpdateState());
+        services.Singleton(() => new SpamModelUpdates(
+            services.Get<ISpamModelSource>(),
+            services.Get<ISpamModelUpdater>(),
+            services.Get<ISpamModelUpdateState>()));
         services.Singleton(() => new SpamDetector(
             services.Get<ISpamClassifier>(),
             services.Get<ISpamSettings>(),
@@ -42,9 +67,20 @@ internal static class AppServices
         services.Singleton(() => new SpamViewModel(
             services.Get<ISpamMessageRepository>(),
             services.Get<ISpamStatsRepository>(),
+            services.Get<ISpamScanStore>(),
             services.Get<ISmsService>(),
             services.Get<ISpamSettings>(),
             services.Get<ITrustedSenders>(),
+            services.Get<IDateFormattingService>()));
+        services.Singleton(() => new SpamScanViewModel(
+            new SpamHistoryScan(services.Get<ISpamClassifier>(), services.Get<SpamDetector>()),
+            services.Get<ISpamScanStore>(),
+            services.Get<ISpamMessageRepository>(),
+            services.Get<ISpamStatsRepository>(),
+            services.Get<ISmsService>(),
+            services.Get<ISpamSettings>(),
+            services.Get<ITrustedSenders>(),
+            services.Get<SpamViewModel>(),
             services.Get<IDateFormattingService>()));
 
         services.Singleton(() => new ActiveChatState());
